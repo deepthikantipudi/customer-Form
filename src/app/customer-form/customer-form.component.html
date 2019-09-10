@@ -2,7 +2,7 @@
 <app-top-bar></app-top-bar>
 <div>
 
-    <form>
+    <form #f=ngForm>
         <div class="container p-0">
             <div class="mb-3 mt-3">
                 <span class="text-left text-capitalize heading" style="color:#0d416b">
@@ -22,8 +22,8 @@
                     <div class="col-md-6">
                         <span class="small text-muted">First Name<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="First Name" name="in_FirstName"
-                                maxlength='30' pattern="[a-zA-Z ]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="First Name" name="FirstName"
+                                maxlength='30' pattern="[a-zA-Z ]*" required [(ngModel)]="formdata.FirstName">
                         </div>
 
                     </div>
@@ -31,8 +31,8 @@
                     <div class="col-md-6">
                         <span class="small text-muted">Last Name<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="Last Name" name='in_LastName'
-                                maxlength='30' pattern="[a-zA-Z ]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="Last Name" name='LastName'
+                                maxlength='30' pattern="[a-zA-Z ]*" required [(ngModel)]="formdata.LastName">
                         </div>
                     </div>
                 </div>
@@ -40,16 +40,16 @@
                     <div class="col-md-6">
                         <span class="small text-muted">Email<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control static-field" aria-label="email" name='in_Email_ID'
-                                value='email' ngModel email required>
+                            <input type="email" class="form-control static-field" aria-label="email" name='EmailID'
+                                value='email' [(ngModel)]="formdata.EmailID" email required>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <span class="small text-muted">Contact Number<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control static-field" aria-label="phone" name='in_Phone'
-                                value='phone' required ngModel>
+                            <input type="text" class="form-control static-field" aria-label="phone" name='Phone'
+                                value='phone' required [(ngModel)]="formdata.Phone">
                         </div>
                     </div>
                 </div>
@@ -57,15 +57,15 @@
                     <div class="col-md-6">
                         <span class="small text-muted">Street Name<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="Address" name='in_Address1' required
-                                ngModel>
+                            <input type="text" class="form-control" aria-label="Address" name='Address1' required
+                            [(ngModel)]="formdata.Address1">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <span class="small text-muted">Apt #<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="Address 2" name='in_Address2' ngModel>
+                            <input type="text" class="form-control" aria-label="Address 2" name='Address2' [(ngModel)]="formdata.Address2">
                         </div>
                     </div>
                 </div>
@@ -73,16 +73,16 @@
                     <div class="col-md-3">
                         <span class="small text-muted">City<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="City" name='in_City'
-                                pattern="[a-zA-Z ]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="City" name='City'
+                                pattern="[a-zA-Z ]*" required [(ngModel)]="formdata.City">
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <span class="small text-muted">State<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="state" name='in_State'
-                                pattern="[a-zA-Z ]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="state" name='State'
+                                pattern="[a-zA-Z ]*" required [(ngModel)]="formdata.State">
                         </div>
                     </div>
 
@@ -90,16 +90,16 @@
                     <div class="col-md-3">
                         <span class="small text-muted">Country<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="Country" name='in_Country'
-                                pattern="[a-zA-Z ]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="Country" name='Country'
+                                pattern="[a-zA-Z ]*" required [(ngModel)]="formdata.Country">
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <span class="small text-muted">Zip Code<sup class="text-danger">*</sup></span>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" aria-label="Zip Code" name='in_ZipCode'
-                                maxlength='5' minlength='5' pattern="[0-9]*" required ngModel>
+                            <input type="text" class="form-control" aria-label="Zip Code" name='ZipCode'
+                                maxlength='5' minlength='5' pattern="[0-9]*" required [(ngModel)]="formdata.ZipCode">
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,8 @@
         <div class="container mt-5 mb-5 p-0">
 
             <div class="row mb-5" style="float: right">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"
+                (click)="onSubmit()">Submit</button>
             </div>
         </div>
 
