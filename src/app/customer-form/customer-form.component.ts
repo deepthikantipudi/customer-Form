@@ -25,7 +25,7 @@ export class CustomerFormComponent implements OnInit {
   //   Phone: '5078976543',
   //   EmailID: 'sneha.salla@gmail.com'
 
-  formdata = {
+  formdata: any = {
     FirstName: "",
     LastName: "",
     Address1: "",
@@ -65,7 +65,7 @@ export class CustomerFormComponent implements OnInit {
       this.customerservice.addCustomer(this.formdata).subscribe(
         res => {
           console.log(res);
-          console.log("Added")
+          console.log("Added");
         },
         err => {
           console.log("error", err);
