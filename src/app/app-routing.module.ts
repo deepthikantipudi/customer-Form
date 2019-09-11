@@ -6,7 +6,8 @@ import { CustomerFormComponent } from './customer-form/customer-form.component';
 
 const routes: Routes = [
   {path: 'topbar', component: TopBarComponent},
-  {path: '', component: CustomerFormComponent}
+  {path: '', component: CustomerFormComponent},
+  { path: '/:id', component: CustomerFormComponent }
 ];
 
 @NgModule({
