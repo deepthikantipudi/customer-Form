@@ -8,22 +8,23 @@ import { HttpClient } from "@angular/common/http";
 })
 
 export class CustomerService {
-url= 'http://localhost:8080'
+url= 'http://172.16.1.45:8080'
   constructor(private http: HttpClient) {}
 
 
 
     addCustomer(formData) {
       console.log("service", formData);
-      return this.http.post(this.url + '/customers', formData);
+      return this.http.post(this.url + '/cust/addCustomer', formData);
     }
-    getCustomer(id) {
-      return this.http.get(this.url + '/customer/' + id);
+    getCustomer() {
+      return this.http.get(this.url + '/cust/allCustomers/');
     }
+    
     editCustomer(id, formData: CustomerModel) {
       return this.http.put(this.url + '/customer/' + id, formData);
     }
     deleteCustomer(id) {
-      return this.http.delete(this.url + '/customer/' + id);
+      return this.http.delete(this.url + '/cust/deleteCustomer/' + id);
     }
 }

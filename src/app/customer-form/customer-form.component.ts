@@ -49,7 +49,7 @@ export class CustomerFormComponent implements OnInit {
         this.mode = "edit";
         this.id = paramMap.get("id");
 
-        this.customerservice.getCustomer(this.id).subscribe(responseData => {
+        this.customerservice.getCustomer().subscribe(responseData => {
           this.formdata = responseData;
         });
       } else {
@@ -75,6 +75,8 @@ export class CustomerFormComponent implements OnInit {
       this.customerservice.editCustomer(this.id, this.formdata).subscribe(
         res => {
           console.log(res);
+
+
 
         },
         err => {
